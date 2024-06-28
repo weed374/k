@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комплексное задание</title>
+    <style>
+        a {
+            border: 1px solid green;
+        }
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Task 1: Подготовительное задание -->
+    <p>Русакевич Артем Валерьевич</p>
+    <a href="https://www.youtube.com" onclick="this.innerText='Текст изменен'">Мой любимый сайт</a>
+    <img src="Screenshot_5.png" alt="Placeholder Image">
+
+    <!-- Task 2: Работа с объектом Document и обработка событий в JavaScript и DOM -->
+    <button onclick="alert(window.location.href)">Получить текущий URL</button>
+    <button onclick="displayInfo()">Вывести информацию</button>
+    <button onclick="removeSecondElement()">Удалить элемент №2</button>
+
+    <!-- Task 4: Объектная модель браузера -->
+    <button onclick="alert(navigator.userAgent)">Получить информацию о компьютере</button>
+    <button onclick="openNewWindow()">Открыть новое окно</button>
+
+    <!-- Task 5: Валидация пользовательских форм -->
+    <form onsubmit="return validateForm()">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" maxlength="10" required>
+        <br><br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        // Task 2: Display current URL
+        function displayInfo() {
+            alert("Текущий URL: " + window.location.href);
+        }
+
+        // Task 2: Remove the second element (link)
+        function removeSecondElement() {
+            var elements = document.body.children;
+            if (elements.length > 1) {
+                elements[1].remove();
+            }
+        }
+
+        // Task 4: Open a new window with specified parameters
+        function openNewWindow() {
+            window.open("https://example.com", "NewWindow", "width=500,height=500,scrollbars=yes,status=no");
+        }
+
+        // Task 5: Form validation
+        function validateForm() {
+            var name = document.getElementById("name");
+            if (name.value === "") {
+                name.classList.add("error");
+                alert("Имя обязательно для заполнения");
+                return false;
+            }
+
+            var email = document.getElementById("email");
+            if (!validateEmail(email.value)) {
+                email.classList.add("error");
+                alert("Неправильный формат Email");
+                return false;
+            }
+
+            var username = document.getElementById("username");
+            if (username.value.length > 10) {
+                username.classList.add("error");
+                alert("Username не должен превышать 10 символов");
+                return false;
+            }
+
+            // If everything is correct, return true
+            return true;
+        }
+
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>

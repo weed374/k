@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Моя визитка">
+    <meta name="keywords" content="визитка, портфолио, контакты">
+    <meta name="author" content="Ваше имя">
+    <title>Моя визитка</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <h1 id="top">Моя визитка</h1> <!-- Якорь для верха страницы -->
+
+    <h2>Основная информация</h2>
+    <p><b>ФИО:</b> Русакевич Артем Валерьевич</p>
+    <p><b>Дата рождения:</b> 12.04.2005</p>
+    <p><b>Телефон:</b> +375 (29) 507-13-82</p>
+    <p><b>Email:</b> vrusakevic2@gmail.com</p>
+
+    <h2>Навыки</h2>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>C#</li>
+        <li>Python</li>
+    </ol>
+
+    <h2>Изображения</h2>
+    <img src="Screenshot_4.png" alt="Моя фотография">
+
+    <h2>Аудио и видео-контент</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mp3">
+    </audio>
+    <video controls width="360" height="240">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <h2>Таблица</h2>
+    <table border="1">
+        <tr>
+            <td rowspan="2">Ячейка 1</td>
+            <td colspan="2">Объединенные по горизонтали</td>
+        </tr>
+        <tr>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+        </tr>
+    </table>
+
+    <h2>Анкета</h2>
+    <form>
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Сообщение:</label><br>
+        <textarea id="message" name="message"></textarea><br>
+        <input type="submit" value="Отправить">
+    </form>
+
+    <h2>Гиперссылки</h2>
+    <p>Внутренняя ссылка: <a href="#top">Мои навыки</a></p> <!-- Используем якорь с идентификатором верха страницы -->
+
+    <p>Внешняя ссылка: <a href="https://github.com/weed374">Мой GitHub</a></p>
+
+    <h2>Спецсимволы</h2>
+    <p> &copy; 2023 Русакевич А.В.</p>
+
+    <h2>Семантические теги</h2>
+    <header>
+        <h1>Заголовок сайта</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="file:///C:/Users/vrusa/OneDrive/Рабочий%20стол/3%20курс/html/site.html/%23about.html">О нас</a></li>
+            <li><a href="file:///C:/Users/vrusa/OneDrive/Рабочий%20стол/3%20курс/html/site.html/%23services.html">Услуги</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>О нас</h2>
+            <p>Краткое описание компании или персональной информации.</p>
+        </section>
+        <section id="services">
+            <h2>Услуги</h2>
+            <p>Предоставляем по консультации и помощи при выборе <b>3D</b> моделей</p>
+        </section>
+        <section id="contact">
+            <h2>Контакты</h2>
+            <div>
+                <p>Русакевич Артем Валерьевич </p>
+                <p>МТС - +375 (29)507-13-82 </p>
+                <p>Gmail - vrusakevic2@gmail.com </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Русакевич А.В.</p>
+    </footer>
+
+</body>
+</html>

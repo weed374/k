@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР10-12</title>
+</head>
+<body>
+    <h1>Задания по JavaScript</h1>
+
+    <!-- Задание 1: Работа с объектом Date -->
+    <h2>Задание 1: Работа с объектом Date</h2>
+    <button onclick="showTime()">Показать время</button>
+    <script>
+        function showTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            alert(`Текущее время: ${hours}:${minutes}`);
+        }
+    </script>
+
+    <!-- Задание 2: Работа с операторами и управлением циклами -->
+    <h2>Задание 2: Работа с операторами и управлением циклами</h2>
+    <script>
+        const lastName = "Русакевич ";
+        const firstName = "Артем";
+        const n = 43; // Вариант №43
+        let count = 0;
+
+        while (count < n) {
+            document.write(`${lastName} ${firstName}<br>`);
+            count++;
+        }
+    </script>
+
+    <!-- Задание 3: Работа с объектом Array -->
+    <h2>Задание 3: Работа с объектом Array</h2>
+    <script>
+        let array = [1, 2, 3, 4, 5, 6, 7];
+        
+        // Поменять местами первый и последний элементы
+        [array[0], array[array.length - 1]] = [array[array.length - 1], array[0]];
+        
+        // Заменить каждый элемент массива с нечетным индексом на 100
+        for (let i = 1; i < array.length; i += 2) {
+            array[i] = 100;
+        }
+        
+        document.write(`Массив после изменений: ${array.join(", ")}<br>`);
+    </script>
+
+    <!-- Задание 4: Работа с объектом Math -->
+    <h2>Задание 4: Работа с объектом Math</h2>
+    <script>
+        function calculateY(g) {
+            try {
+                if (g < 0) throw new Error("Корень из отрицательного числа");
+                if (g === 0) throw new Error("Деление на ноль");
+                
+                const y = (1.69 * g) / (1 + Math.sqrt(g));
+                return y;
+            } catch (error) {
+                alert(error.message);
+                return null;
+            }
+        }
+
+        const g = 4; // Примерное значение
+        const result = calculateY(g);
+        if (result !== null) {
+            document.write(`Результат: ${result}<br>`);
+        }
+    </script>
+
+    <!-- Задание 5: Работа со строками STRING -->
+    <h2>Задание 5: Работа со строками STRING</h2>
+    <script>
+        const S1 = "Я люблю Беларусь";
+        const S2 = "Я учусь в Политехническом колледже";
+        const n = 43; // Вариант №43
+        
+        // 1. Определить длину строки S1
+        const lengthS1 = S1.length;
+        
+        // 2. Выделить n-ый символ в строке S1 (n — номер варианта)
+        const charS1 = S1[n % lengthS1]; // To handle index within range
+        
+        // 3. Определить ASCII-код этого символа
+        const asciiCode = charS1.charCodeAt(0);
+        
+        // 4. Заменить в строке S1 все встречающиеся буквы "о" на "a"
+        const replacedS1 = S1.replace(/о/g, 'a');
+        
+        document.write(`Длина строки S1: ${lengthS1}<br>`);
+        document.write(`n-ый символ в строке S1: ${charS1}<br>`);
+        document.write(`ASCII-код этого символа: ${asciiCode}<br>`);
+        document.write(`Строка S1 после замены: ${replacedS1}<br>`);
+    </script>
+</body>
+</html>
